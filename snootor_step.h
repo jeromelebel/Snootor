@@ -49,7 +49,7 @@ class SnootorStep : public SnootorMotor{
   uint8_t last_val, cur_val;                     // current / last coil position
   unsigned long last_time;                    // last step done un microsecs
   uint16_t (*callback)();
-  int16_t steps_to_do;                           // requested steps
+  int32_t steps_to_do;                           // requested steps
   uint8_t is_running;                             // boolean state to shutdown motor once all steps done
 
  public:
@@ -146,7 +146,7 @@ class SnootorStep : public SnootorMotor{
    * @return number of steps to do
    *
    */
-  int16_t getSteps(void){return (steps_to_do);}
+  int32_t getSteps(void){return (steps_to_do);}
   /**
    * getPosition
    * 
